@@ -78,4 +78,4 @@ This project is licensed under the **MIT License** – free to use, modify, and 
 
 ---
 
-👨‍💻 Made with ❤️ by [Atmajo Burman](https://www.linkedin.com/in/atmajo-burman/)  
+👨‍💻 Made with ❤️ by [Atmajo Burman](www.linkedin.com/in/atmajo-burman-b797b131a)  
