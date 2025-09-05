@@ -1,0 +1,372 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+body {
+  padding-top: 60px; /* space for fixed navbar */
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('INTRO.png'); /* or intro.jpg or your landscape filename */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 999; /* on top of everything */
+}
+
+/* Loader container at bottom center */
+.loader-container {
+  width: 60%;
+  max-width: 600px;
+  height: 15px;
+  border: 2px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 50px; /* space from bottom */
+  background: rgba(255,255,255,0.2);
+}
+
+/* The filling bar */
+.loader-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    #f28b82,   /* darker red at the left */
+    #e74634,    /* main red */
+    red   /* lighter red toward the right */
+  );
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+  border-radius: 10px; /* match container’s radius */
+  animation: load-ten-seconds 10s linear forwards;
+}
+
+/* Animation: fill from 0% to 100% width over 5s */
+@keyframes load-ten-seconds {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+/* Fade-out effect for intro */
+#intro.fade-out {
+  animation: fade-out 0.5s forwards;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+
+/* Navbar styling */
+#navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background-color: #222;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+#timer {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+#timer.warning {
+  animation: glow-red 1s infinite alternate;
+}
+
+@keyframes glow-red {
+  from { color: #fff; text-shadow: none; }
+  to { color: #f00; text-shadow: 0 0 8px rgba(255,0,0,0.8); }
+}
+
+#hint-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+#hint-btn:hover:not(:disabled) {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 12px rgba(231,76,60,0.9), 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+#hint-btn:disabled {
+  background-color: #777;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+#score {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Main container: define a height so children’s percentage heights work */
+#main {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  perspective: 1000px;
+  height: calc(100vh - 60px);  /* as before */
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Card container with original percentages */
+.boxes {
+  width: 8%;
+  height: 24%;
+  margin: 10px 0;
+  perspective: 800px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+  border-radius: 15%;    /* match inner’s rounding */
+  overflow: visible;
+}
+
+.boxes:not(.matched):hover {
+  transform: translateY(-10px) scale(1.1);
+}
+.boxes:not(.matched):hover .card-inner {
+  box-shadow: 0 0 16px rgba(255, 255, 0, 0.9), 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+.boxes:not(.matched):active {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Flip inner */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  border-radius: 15%;
+}
+
+/* For vibration before flip-back */
+.card-inner.vibrate {
+  animation: vibrate 0.3s;
+}
+
+@keyframes vibrate {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Faces: white background */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 3px solid #333;
+  border-radius: 15%;
+  background-color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Back face (face-down) */
+.card-back {
+  transform: rotateY(0deg);
+  background-image: url('Screenshot 2025-06-21 125322.png');
+  background-size: cover;
+  display:flex;
+  justify-content: center;
+}
+
+/* Front face (image) */
+.card-front {
+  transform: rotateY(180deg);
+  background-size: contain;
+}
+
+/* Matched styling */
+.boxes.matched .card-front,
+.boxes.matched .card-back {
+  border-color: green;
+  background-color: white !important;
+  background-image: none !important;
+}
+
+.boxes.matched .card-front .tick {
+  font-size: 2em;
+  color: green;
+  animation: pop 0.3s ease-out forwards;
+}
+
+.boxes.frozen {
+  pointer-events: none;
+  /* Optional styling to show they’re disabled, e.g.: */
+  opacity: 0.6;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  80% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Floating score changes */
+.float-up, .float-down {
+  position: absolute;
+  font-size: 10rem;
+  font-weight: bold;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 200; /* above navbar content */
+}
+
+@keyframes fade-up {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-40px); }
+}
+
+@keyframes fade-down {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(40px); }
+}
+
+.float-up {
+  color: #0f0;
+  animation: fade-up 1s forwards;
+}
+
+.float-down {
+  color: #f00;
+  animation: fade-down 1s forwards;
+}
+
+/* Outro overlay */
+#outro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('OUTRO.png');
+  background-size: cover;
+  background-position: center;
+  display: none; /* hidden initially */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* above everything */
+}
+
+/* Centering container */
+#outro .outro-content {
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent dark overlay behind text for contrast */
+  border-radius: 10px;
+  padding: 30px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The multi-line text */
+#outro .outro-text {
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 20px;
+}
+
+#outro .outro-text div {
+  /* Each line styling */
+  font-size: 2.5rem; /* adjust larger if desired */
+  line-height: 1.2;
+  margin: 5px 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+/* Specific styling for the numeric score line */
+#outro .outro-text #outro-score {
+  font-size: 4rem; /* bigger for the number */
+  font-weight: bold;
+  color: #ffd700; /* gold color for emphasis */
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+}
+
+/* Play Again button */
+#play-again-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#play-again-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px rgba(40,167,69,0.7);
+}
+
+/* Optional: if you want fade-in animation when showing outro */
+@keyframes outro-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+#outro.show {
+  display: flex;
+  animation: outro-fade-in 0.5s ease-out forwards;
+}
+
+/* add fade-out keyframes */
+@keyframes outro-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+#outro.hide {
+  animation: outro-fade-out 0.5s forwards;
+}
