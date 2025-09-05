@@ -1,13 +1,12 @@
 # Peek-a-Pair
 🎴 Peek-a-Pair is an interactive memory card-matching game built with HTML, CSS, and JavaScript. 🔄 Flip cards, find matching pairs 🎯, and score points 🏆 as you test your memory and focus.
 
-# Peek-a-Pair
 
 ![GitHub Pages Status](https://github.com/atmajoburman/Peek-a-Pair/actions/workflows/pages/pages-build-deployment/badge.svg)
 
 An interactive memory-matching game built with HTML, CSS, and JavaScript. Flip cards, find matching pairs, and score points as you test your memory and focus.
 
-[**▶️ Play the Game!**](https://atmajioburman.github.io/Peek-a-Pair/)
+[**▶️ Play the Game!**](https://atmajoburman.github.io/Peek-a-Pair/)
 
 ---
 
