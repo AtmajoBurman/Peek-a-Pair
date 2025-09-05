@@ -1,40 +1,82 @@
-# Peek-a-Pair
-🎴 Peek-a-Pair is an interactive memory card-matching game built with HTML, CSS, and JavaScript. 🔄 Flip cards, find matching pairs 🎯, and score points 🏆 as you test your memory and focus.
+# 🎴 Peek-a-Pair  
 
+Peek-a-Pair is an **interactive memory card-matching game** built with **HTML, CSS, and JavaScript**.  
+🔄 Flip cards, find matching pairs 🎯, and score points 🏆 as you test your **memory and focus**.  
 
 ![GitHub Pages Status](https://github.com/atmajoburman/Peek-a-Pair/actions/workflows/pages/pages-build-deployment/badge.svg)
 
-An interactive memory-matching game built with HTML, CSS, and JavaScript. Flip cards, find matching pairs, and score points as you test your memory and focus.
-
-[**▶️ Play the Game!**](https://atmajoburman.github.io/Peek-a-Pair/)
+🎮 **[▶️ Play the Game!](https://atmajoburman.github.io/Peek-a-Pair/)**  
 
 ---
 
-## 🚀 Features
+## 🚀 Features  
 
-* **Interactive Gameplay**: A dynamic card-flipping mechanism to match pairs.
-* **Scoring System**: Tracks the number of moves to complete the game, encouraging players to improve.
-* **Responsive Design**: The game board adjusts to fit different screen sizes, from mobile phones to desktop monitors.
-* **Intuitive UI/UX**: Simple and clean design for a distraction-free gaming experience.
-* **Built with Core Web Technologies**: No external libraries or frameworks, just pure HTML, CSS, and JavaScript.
-
----
-
-## 🛠️ Technologies Used
-
-* **HTML5**: For the game's structure and content.
-* **CSS3**: For styling, animations, and responsive layout.
-* **JavaScript (ES6+)**: For game logic, including card shuffling, flipping, and matching.
+- 🎴 **Interactive Gameplay** – Dynamic card-flipping with animations.  
+- 🏆 **Scoring System** – Tracks moves and performance to encourage improvement.  
+- 📱 **Responsive Design** – Works across devices (mobile, tablet, desktop).  
+- 🎨 **Intuitive UI/UX** – Clean, minimal, distraction-free interface.  
+- ⚡ **Lightweight** – Built only with HTML, CSS, and Vanilla JavaScript (no frameworks).  
 
 ---
 
-## ⚙️ How to Play
+## 🛠️ Technologies Used  
 
-1.  Click on any card to flip it over.
-2.  Flip a second card. If it matches the first one, both cards will stay flipped.
-3.  If they don't match, both cards will flip back over.
-4.  Continue until you've found all the matching pairs.
-5.  Try to complete the game using the fewest hints possible!
+- **HTML5** → Game structure & content  
+- **CSS3** → Styling, animations, responsiveness  
+- **JavaScript (ES6+)** → Core logic (shuffling, flipping, matching, scoring)  
 
 ---
 
+## ⚙️ How to Play  
+
+1. Click on a card to flip it over.  
+2. Flip another card.  
+   - ✅ If they match → both stay open.  
+   - ❌ If they don’t match → both flip back.  
+3. Continue until all pairs are matched.  
+4. Try to finish with the **fewest moves & hints** possible!  
+
+---
+
+## 📸 Screenshots  
+
+| Gameplay | Outro Screen |  
+|----------|--------------|  
+| ![Gameplay Screenshot](assets/screenshots/gameplay.png) | ![Outro Screenshot](assets/screenshots/outro.png) |  
+
+*(Add screenshots later if available)*  
+
+---
+
+## 📌 Upcoming Enhancements  
+
+- 🎵 **Sound effects** for flipping and matching  
+- 🏅 **High Score tracking** (local storage)  
+- 🌙 **Dark/Light theme toggle**  
+- 🔄 **More difficulty levels** (varying card counts)  
+- 📱 Further **responsiveness & animations**  
+
+---
+
+## 💡 Inspiration  
+
+This is my **first gaming project** using my knowledge of **Frontend Web Development**, combined with **AI prompting** to ideate, debug, and polish the workflow.  
+
+It’s a small step, but it marks the start of my journey into building interactive projects 🚀  
+
+---
+
+## 🤝 Contributing  
+
+Contributions, issues, and feature requests are welcome!  
+Feel free to fork this repo, open an issue, or submit a pull request.  
+
+---
+
+## 📜 License  
+
+This project is licensed under the **MIT License** – free to use, modify, and distribute.  
+
+---
+
+👨‍💻 Made with ❤️ by [Atmajo Burman](https://www.linkedin.com/in/atmajo-burman/)  
