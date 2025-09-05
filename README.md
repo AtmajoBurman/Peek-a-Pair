@@ -40,11 +40,10 @@ Peek-a-Pair is an **interactive memory card-matching game** built with **HTML, C
 
 ## 📸 Screenshots  
 
-| Gameplay | Outro Screen |  
-|----------|--------------|  
-| ![Gameplay Screenshot](assets/screenshots/gameplay.png) | ![Outro Screenshot](assets/screenshots/outro.png) |  
+| Intro Screen | Gameplay | Outro Screen |  
+|--------------|----------|--------------|  
+| ![Intro Screenshot](INTRO_SCREEN.png) | ![Gameplay Screenshot](GAMEPLAY_SCREEN.png) | ![Outro Screenshot](OUTRO_SCREEN.png) |  
 
-*(Add screenshots later if available)*  
 
 ---
 
