@@ -3,8 +3,7 @@
 
 # Peek-a-Pair
 
-![GitHub Actions Status](https://github.com/atmajioburman/Peek-a-Pair/actions/workflows/main.yml/badge.svg)
-![GitHub Pages Status](https://github.com/atmajioburman/Peek-a-Pair/actions/workflows/pages/pages-build-deployment/badge.svg)
+![GitHub Pages Status](https://github.com/atmajoburman/Peek-a-Pair/actions/workflows/pages/pages-build-deployment/badge.svg)
 
 An interactive memory-matching game built with HTML, CSS, and JavaScript. Flip cards, find matching pairs, and score points as you test your memory and focus.
 
